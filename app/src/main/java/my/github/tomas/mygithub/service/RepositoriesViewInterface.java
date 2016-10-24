@@ -1,6 +1,7 @@
 package my.github.tomas.mygithub.service;
 
 import java.util.List;
+
 import my.github.tomas.mygithub.mvp.model.RepositoryResponse;
 import rx.Observable;
 

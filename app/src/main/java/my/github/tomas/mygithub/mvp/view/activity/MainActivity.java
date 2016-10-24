@@ -1,5 +1,6 @@
 package my.github.tomas.mygithub.mvp.view.activity;
 
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.PagerAdapter;
@@ -16,6 +17,10 @@ public class MainActivity extends AppCompatActivity {
     ViewPager pager;
     TabLayout tabLayout;
 
+    public static String mCurrentUser;
+    public static String mCurrentRepository;
+    public static String mRepositoryPath = "";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
         Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
 
+        Intent intent = getIntent();
+        mCurrentUser = intent.getStringExtra(SignInActivity.STRING_PATH);
         configViewPager();
     }
 
