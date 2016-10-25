@@ -3,6 +3,7 @@ package my.github.tomas.mygithub.service;
 import java.util.List;
 
 import my.github.tomas.mygithub.mvp.model.RepositoryResponse;
+import my.github.tomas.mygithub.mvp.model.SingleRepositoryResponse;
 import my.github.tomas.mygithub.mvp.model.UserResponse;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
@@ -15,13 +16,21 @@ import rx.Observable;
 
 public interface GithubService {
 
-//    @Headers({"Accept: application/vnd.github.v3+json", "Authorization: token legit"})
     @GET("/users/{username}")
     Observable<UserResponse> getUser(
             @Path("username") String username
     );
 
-//    @Headers({"Accept: application/vnd.github.v3+json", "Authorization: token legit"})
     @GET("/users/{user}/repos")
     Observable<List<RepositoryResponse>> getUsersRepositories(@Path("user") String user);
+
+
+
+    @GET("/repos/{user}/{repository}/contents{path}")
+    Observable<List<SingleRepositoryResponse>> getSingleRepository(@Path("user") String user, @Path("repository") String repository, @Path("path") String path);
+
+//    @GET("/repos/{user}/{repository}")
+//    Observable<List<SingleRepositoryResponse>> getSingleRepository(@Path("user") String user, @Path("repository") String repository);
+
+
 }

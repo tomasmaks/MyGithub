@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">MyGithub</string>
     <string name="title_activity_sign_in">SignInActivity</string>
+    <string name="title_activity_repo">Repository</string>
+
+    <string name="title_activity_repository_webview">RepositoryWebviewActivity</string>
+
+
 </resources>

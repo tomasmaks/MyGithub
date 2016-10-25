@@ -2,6 +2,7 @@ package my.github.tomas.mygithub.dependencies;
 
 import dagger.Component;
 import my.github.tomas.mygithub.mvp.view.activity.MainActivity;
+import my.github.tomas.mygithub.mvp.view.activity.RepositoryActivity;
 import my.github.tomas.mygithub.mvp.view.fragment.RepositoriesFragment;
 
 /**
@@ -14,4 +15,5 @@ public interface ApiComponent {
 
     void inject(RepositoriesFragment fragment);
     void inject(MainActivity mainActivity);
+    void inject(RepositoryActivity repositoryActivity);
 }

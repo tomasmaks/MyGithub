@@ -17,11 +17,12 @@ import my.github.tomas.mygithub.R;
 import my.github.tomas.mygithub.application.GithubApplication;
 import my.github.tomas.mygithub.mvp.presenter.RepositoriesPresenter;
 import my.github.tomas.mygithub.mvp.view.activity.MainActivity;
+import my.github.tomas.mygithub.mvp.view.activity.RepositoryWebviewActivity;
 import my.github.tomas.mygithub.mvp.view.adapter.RepositoriesAdapter;
 import my.github.tomas.mygithub.mvp.model.RepositoryResponse;
 import my.github.tomas.mygithub.service.GithubService;
 import my.github.tomas.mygithub.service.RepositoriesViewInterface;
-import my.github.tomas.mygithub.mvp.view.activity.RepositoriesActivity;
+import my.github.tomas.mygithub.mvp.view.activity.RepositoryActivity;
 import my.github.tomas.mygithub.utils.GithubClickListener;
 
 import java.util.List;
@@ -91,7 +92,7 @@ public class RepositoriesFragment extends Fragment implements RepositoriesViewIn
         MainActivity.mRepositoryPath = "";
         Toast.makeText(getActivity(), "You just clicked on " + name, Toast.LENGTH_SHORT).show();
         MainActivity.mCurrentRepository = name;
-        Intent repoIntent = new Intent(getActivity(), RepositoriesActivity.class);
+        Intent repoIntent = new Intent(getActivity(), RepositoryActivity.class);
         RepositoriesFragment.this.startActivity(repoIntent);
     }
 
